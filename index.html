@@ -299,6 +299,367 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/洛谷-提高组-简单的模拟/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sun Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syyyyyw Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/12/洛谷-提高组-简单的模拟/" itemprop="url">洛谷_提高组_简单的模拟</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T15:00:45+08:00">
+                2018-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="P1002-铺地毯"><a href="#P1002-铺地毯" class="headerlink" title="P1002 铺地毯"></a>P1002 铺地毯</h3><p>代码如下：</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=1e4+5;
+int a[maxn],b[maxn],g[maxn],k[maxn],n,x,y;
+int main()
+{
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i=1;i&lt;=n;i++) {
+        scanf(&quot;%d%d%d%d&quot;,&amp;a[i],&amp;b[i],&amp;g[i],&amp;k[i]);
+    }
+    scanf(&quot;%d%d&quot;,&amp;x,&amp;y);
+    int ans=-1;
+    for(int i=1;i&lt;=n;i++) {
+        int temp1=a[i]+g[i],temp2=b[i]+k[i];
+        if(x&gt;=a[i]&amp;&amp;x&lt;=temp1&amp;&amp;y&gt;=b[i]&amp;&amp;y&lt;=temp2) {
+            ans=i;
+        }
+    }
+    printf(&quot;%d\n&quot;,ans);
+}
+</code></pre><h3 id="P1067-多项式输出"><a href="#P1067-多项式输出" class="headerlink" title="P1067 多项式输出"></a>P1067 多项式输出</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int n,a[10005];
+int main()
+{
+    while(~scanf(&quot;%d&quot;,&amp;n)) {
+        for(int i=n;i&gt;=0;i--) {
+            scanf(&quot;%d&quot;,&amp;a[i]);
+        }
+        for(int i=n;i&gt;=0;i--) {
+            if(a[i]==0) {
+                continue;
+            }
+            if(a[i]&gt;0&amp;&amp;i!=n) {
+                printf(&quot;+&quot;);
+            }
+            if(a[i]==1||a[i]==-1) {
+                if(a[i]==-1) {
+                    printf(&quot;-&quot;);
+                }
+                if(i==0) {
+                    printf(&quot;1&quot;);
+                }
+            }
+            else{
+                printf(&quot;%d&quot;,a[i]);
+            }
+            if(i!=0) {
+                printf(&quot;x&quot;);
+            }
+            if(i!=1&amp;&amp;i!=0) {
+                printf(&quot;^%d&quot;,i);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+</code></pre><h3 id="P1540-机器翻译"><a href="#P1540-机器翻译" class="headerlink" title="P1540 机器翻译"></a>P1540 机器翻译</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int a[10005],b[10005];
+int l,r,m,n;
+int main()
+{
+    int ans=0;
+    scanf(&quot;%d%d&quot;,&amp;m,&amp;n);
+    for(int i=0;i&lt;n;i++) {
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    l=0; r=0;
+    for(int i=0;i&lt;n;i++) {
+        int flag=0;
+        for(int j=l;j&lt;r;j++) {
+            if(b[j]==a[i]) {
+                flag=1; break;
+            }
+        }
+        if(flag==0) {
+             if(r-l==m) {
+                l++;
+            }
+            ans++; b[r++]=a[i];
+        }
+//        for(int j=l;j&lt;r;j++) {
+//            printf(&quot;%d &quot;,b[j]);
+//        }
+//        printf(&quot;\n&quot;);
+    }
+    printf(&quot;%d\n&quot;,ans);
+}
+</code></pre><h3 id="P1056-排座椅"><a href="#P1056-排座椅" class="headerlink" title="P1056 排座椅"></a>P1056 排座椅</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int m,n,k,l,d;
+struct Node
+{
+    int num,id;
+}a[1005],b[1005];
+bool cmp(Node a,Node b)
+{
+    return a.num&gt;b.num;
+}
+bool cmp2(Node a,Node b)
+{
+    return a.id&lt;b.id;
+}
+int main()
+{
+    scanf(&quot;%d%d%d%d%d&quot;,&amp;m,&amp;n,&amp;k,&amp;l,&amp;d);
+    for(int i=1;i&lt;=m;i++) {
+        a[i].num=0;
+        a[i].id=i;
+    }
+    for(int i=1;i&lt;=n;i++) {
+        b[i].id=i;
+        b[i].num=0;
+    }
+    for(int i=0;i&lt;d;i++) {
+        int x,y,p,q;
+        scanf(&quot;%d%d%d%d&quot;,&amp;x,&amp;y,&amp;p,&amp;q);
+        if(x==p) {
+            int temp=min(y,q);
+            b[temp].num++;
+        }
+        else{
+            int temp=min(x,p);
+            a[temp].num++;
+        }
+    }
+    sort(a,a+m,cmp);
+    sort(b,b+n,cmp);
+    sort(a,a+k,cmp2);
+    sort(b,b+l,cmp2);
+    for(int i=0;i&lt;k;i++) {
+        printf(&quot;%d%c&quot;,a[i].id,i==k-1?&apos;\n&apos;:&apos; &apos;);
+    }
+    for(int i=0;i&lt;l;i++) {
+        printf(&quot;%d%c&quot;,b[i].id,i==l-1?&apos;\n&apos;:&apos; &apos;);
+    }
+}
+</code></pre><h3 id="P1328-生活大爆炸版石头剪刀布"><a href="#P1328-生活大爆炸版石头剪刀布" class="headerlink" title="P1328 生活大爆炸版石头剪刀布"></a>P1328 生活大爆炸版石头剪刀布</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int n1,n2,n3;
+int a[205],b[205];
+int main()
+{
+    scanf(&quot;%d%d%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    for(int i=0;i&lt;n2;i++) {
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    for(int i=0;i&lt;n3;i++) {
+        scanf(&quot;%d&quot;,&amp;b[i]);
+    }
+    int ans1=0,ans2=0;
+    for(int i=0;i&lt;n1;i++) {
+        int p1=i%n2,p2=i%n3;
+        if(a[p1]==0) {
+            if(b[p2]==2||b[p2]==3) {
+                ans1++;
+            }
+            else if(b[p2]==1||b[p2]==4) {
+                ans2++;
+            }
+        }
+        if(a[p1]==1) {
+            if(b[p2]==3||b[p2]==0) {
+                ans1++;
+            }
+            else if(b[p2]==2||b[p2]==4) {
+                ans2++;
+            }
+        }
+        if(a[p1]==2) {
+            if(b[p2]==4||b[p2]==1) {
+                ans1++;
+            }
+            else if(b[p2]==3||b[p2]==0) {
+                ans2++;
+            }
+        }
+        if(a[p1]==3) {
+            if(b[p2]==4||b[p2]==2) {
+                ans1++;
+            }
+            else if(b[p2]==0||b[p2]==1) {
+                ans2++;
+            }
+        }
+        if(a[p1]==4) {
+            if(b[p2]==0||b[p2]==1) {
+                ans1++;
+            }
+            else if(b[p2]==2||b[p2]==3) {
+                ans2++;
+            }
+        }
+     }
+     printf(&quot;%d %d\n&quot;,ans1,ans2);
+}
+</code></pre><h3 id="P1563-玩具谜题"><a href="#P1563-玩具谜题" class="headerlink" title="P1563 玩具谜题"></a>P1563 玩具谜题</h3><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=1e5+7;
+int n,m;
+char s[maxn][15];
+int f[maxn],a[maxn],ff[maxn];
+int main()
+{
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=0;i&lt;n;i++) {
+        scanf(&quot;%d%s&quot;,&amp;f[i],s[i]);
+    }
+    for(int i=0;i&lt;m;i++) {
+        scanf(&quot;%d%d&quot;,&amp;a[i],&amp;ff[i]);
+    }
+    int p=0;
+    for(int i=0;i&lt;m;i++) {
+        if(a[i]==f[p]) {
+            p=(p-ff[i]+n)%n;
+        }
+        else{
+            p=(p+ff[i])%n;
+        }
+    }
+    printf(&quot;%s\n&quot;,s[p]);
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/我的博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -370,7 +731,7 @@
       
         
           
-            <p>######双11这一天算是把博客弄的告一段落吧<br>接下来 将去记录我从大三上的故事吧<br>现在acm已经退役 打的成绩也不让人满意<br>目前来说 大三上的目标就是： 刷一次6级 争取上500 ccf考的进可能高 绩点争取第1<br>大三下的事情就先不去想了 先去做好当前的事情</p>
+            <h3 id="双11这一天算是把博客弄的告一段落吧"><a href="#双11这一天算是把博客弄的告一段落吧" class="headerlink" title="双11这一天算是把博客弄的告一段落吧"></a>双11这一天算是把博客弄的告一段落吧</h3><p>接下来 将去记录我从大三上的故事吧<br>现在acm已经退役 打的成绩也不让人满意<br>目前来说 大三上的目标就是： 刷一次6级 争取上500 ccf考的进可能高 绩点争取第1<br>大三下的事情就先不去想了 先去做好当前的事情</p>
 <p>接下来就沉下心来刷刷题吧 到此为止 </p>
 
           
@@ -453,7 +814,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
