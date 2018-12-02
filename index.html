@@ -448,7 +448,7 @@
                 
               
 
-              <time title="创建时间：2018-12-02 15:49:51 / 修改时间：15:55:03" itemprop="dateCreated datePublished" datetime="2018-12-02T15:49:51+08:00">2018-12-02</time>
+              <time title="创建时间：2018-12-02 15:49:51 / 修改时间：16:21:51" itemprop="dateCreated datePublished" datetime="2018-12-02T15:49:51+08:00">2018-12-02</time>
             
 
             
@@ -519,192 +519,10 @@
             <p>大三上，也就是这个学期学的php</p>
 <p>记录几个实验我觉得比较难的(大神勿喷)</p>
 <h3 id="投票系统"><a href="#投票系统" class="headerlink" title="投票系统"></a>投票系统</h3><p>我用了3个文件<br>没界面优化<br>只用了一点数据库</p>
-<p>第一个是vote.html;</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>统计大学生年级的情况<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"vote.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    选择年纪: <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>大一 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>大二 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>大三 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>大四 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交按钮"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第二个是vote.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    @mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</span><br><span class="line">    @mysql_select_db(<span class="string">"test4"</span>);</span><br><span class="line">    @mysql_query(<span class="string">"set names utf8"</span>);</span><br><span class="line">    $value=$_POST[<span class="string">'class'</span>];</span><br><span class="line">    @mysql_query(<span class="string">"insert into count values($value)"</span>);</span><br><span class="line">    </span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">        alert(<span class="string">"投票成功"</span>);</span><br><span class="line">        window.location.href=<span class="string">"result.php"</span>;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>第三个result.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;h2&gt;结果如下&lt;/h2&gt;</span><br><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    @mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</span><br><span class="line">    @mysql_select_db(<span class="string">"test4"</span>);</span><br><span class="line">    @mysql_query(<span class="string">"set names utf8"</span>);</span><br><span class="line">    $a = <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">    $sum =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">foreach</span>($a <span class="keyword">as</span> $value) &#123;</span><br><span class="line">        $aa=@mysql_query(<span class="string">"select * from count where value=$value"</span>);</span><br><span class="line">        $bb=@mysql_num_rows($aa);</span><br><span class="line">        $sum+=$bb;</span><br><span class="line">        <span class="keyword">if</span>($value==<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"大一的人数如下："</span>.$bb;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($value==<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"大二的人数如下："</span>.$bb;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($value==<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"大三的人数如下："</span>.$bb;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($value==<span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"大四的人数如下："</span>.$bb;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"总的人数为："</span>.$sum;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h3><p>###大作业</p>
-
-          
-        
-      
-    </div>
-
-    
-    <div>    
- 
- 
-</div>
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/php学习记录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sun Wei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="syyyyyw Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/02/php学习记录/" class="post-title-link" itemprop="http://yoursite.com/index.html">php学习记录</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-02 15:49:51 / 修改时间：16:15:47" itemprop="dateCreated datePublished" datetime="2018-12-02T15:49:51+08:00">2018-12-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-
-
-          
-
-          
-
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/02/php学习记录/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/php学习记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/02/php学习记录/" class="leancloud_visitors" data-flag-title="php学习记录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>大三上，也就是这个学期学的php</p>
-<p>记录几个实验我觉得比较难的(大神勿喷)</p>
-<h3 id="投票系统"><a href="#投票系统" class="headerlink" title="投票系统"></a>投票系统</h3><p>我用了3个文件<br>没界面优化<br>只用了一点数据库</p>
-<p>效果如下：</p>
-<p><img src="php学习记录/1.jpg" alt="1"></p>
-<p><img src="php学习记录/2.jpg" alt="2"></p>
-<p><img src="php学习记录/3.jpg" alt="3"></p>
+<p>效果如下:</p>
+<p><img src="1.jpg" alt="1"></p>
+<p><img src="2.jpg" alt="2"></p>
+<p><img src="3.jpg" alt="3"></p>
 <p>第一个是vote.html;</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>统计大学生年级的情况<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"vote.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    选择年纪: <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>大一 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>大二 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>大三 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>大四 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交按钮"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>第二个是vote.php</p>
@@ -2437,6 +2255,174 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/python学习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sun Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="syyyyyw Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/14/python学习/" class="post-title-link" itemprop="http://yoursite.com/index.html">python学习</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-14 15:18:50" itemprop="dateCreated datePublished" datetime="2018-11-14T15:18:50+08:00">2018-11-14</time>
+            
+
+            
+          </span>
+
+
+
+          
+
+          
+
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/14/python学习/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/14/python学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/14/python学习/" class="leancloud_visitors" data-flag-title="python学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+    <div>    
+ 
+ 
+</div>
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2484,7 +2470,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
