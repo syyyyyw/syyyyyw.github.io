@@ -448,7 +448,7 @@
                 
               
 
-              <time title="创建时间：2018-12-02 16:50:41 / 修改时间：19:15:25" itemprop="dateCreated datePublished" datetime="2018-12-02T16:50:41+08:00">2018-12-02</time>
+              <time title="创建时间：2018-12-02 16:50:41 / 修改时间：19:19:11" itemprop="dateCreated datePublished" datetime="2018-12-02T16:50:41+08:00">2018-12-02</time>
             
 
             
@@ -517,12 +517,13 @@
         
           
             <p>大三上，也就是这个学期学的php</p>
+<p>事实证明：<br>只有把post_asset_folder: true 才能上传图片</p>
 <p>记录几个实验我觉得比较难的(大神勿喷)</p>
 <h3 id="投票系统"><a href="#投票系统" class="headerlink" title="投票系统"></a>投票系统</h3><p>我用了3个文件<br>没界面优化<br>只用了一点数据库</p>
 <p>效果如下:</p>
-<p><img src="php学习记录/1.jpg" alt="1"></p>
-<p><img src="php学习记录/2.jpg" alt="2"></p>
-<p><img src="php学习记录/3.jpg" alt="3"></p>
+<p><img src="/2018/12/02/php学习记录/1.jpg" alt="1"></p>
+<p><img src="/2018/12/02/php学习记录/2.jpg" alt="2"></p>
+<p><img src="/2018/12/02/php学习记录/3.jpg" alt="3"></p>
 <p>第一个是vote.html;</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>统计大学生年级的情况<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"vote.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    选择年纪: <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>大一 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>大二 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>大三 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"class"</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>大四 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交按钮"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>第二个是vote.php</p>
@@ -532,9 +533,9 @@
 <h3 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h3><p>和那个几乎一样 这个写是为了测试嵌入图片能不能用。。。</p>
 <p>4个文件</p>
 <p>效果如下：</p>
-<p><img src="php学习记录/4.jpg" alt="4"></p>
-<p><img src="php学习记录/5.jpg" alt="5"></p>
-<p><img src="php学习记录/6.jpg" alt="6"></p>
+<p><img src="/2018/12/02/php学习记录/4.jpg" alt="4"></p>
+<p><img src="/2018/12/02/php学习记录/5.jpg" alt="5"></p>
+<p><img src="/2018/12/02/php学习记录/6.jpg" alt="6"></p>
 <p>showye.html</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这里是留言板<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>有两个选择： 1.我要留言 2.查看留言<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"liuyan.html"</span> &gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>我要留言<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"list.php"</span> &gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>查看留言<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>liuyan.html</p>
